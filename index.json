@@ -1,55 +1,50 @@
 {
   "html": {
     "lang": "en",
-    "title": "Marcos Carrasco",
+    "title": "GNX An album by Kendrick Lamar - Unofficial website",
     "description": "Follow me on all my socials",
     "favicon": "/favicon.svg"
   },
   "background": {
-    "firstColor": "#454281",
-    "secondColor": "#B38AC2"
+    "firstColor": "#FFF",
+    "secondColor": "#D0D4E2"
   },
   "header": {
     "image": "/profile.webp",
-    "alt": "The owner of this website.",
-    "title": "Marcos Carrasco",
-    "description": "Full Stack Developer",
-    "textColor": "white"
+    "alt": "Hip hop artist Kendrick Lamar",
+    "title": "GNX",
+    "description": "An Album by Kendrick Lamar",
+    "textColor": "#797979"
   },
   "socials": [
     {
-      "network": "GitHub",
-      "username": "marcosklender",
-      "url": "https://github.com/marcosklender"
-    },
-    {
-      "network": "LinkedIn",
-      "username": "marcosklender",
-      "url": "https://www.linkedin.com/in/marcosklender/?locale=en_US"
-    },
-    {
       "network": "Instagram",
-      "username": "marcosklender",
-      "url": "https://www.instagram.com/marcosklender"
+      "username": "@kendricklamar",
+      "url": "https://www.instagram.com/kendricklamar"
     },
     {
-      "network": "Mail",
-      "username": "marcosklender",
-      "url": "mailto:marcosklender@gmail.com"
+      "network": "X",
+      "username": "@kendricklamar",
+      "url": "https://www.x.com/kendricklamar"
+    },
+    {
+      "network": "YouTube",
+      "username": "@kendricklamar",
+      "url": "https://www.x.com/kendricklamar"
     },
     {
       "network": "Link",
-      "username": "JSONLinks",
-      "url": "https://jsonlinks.netlify.app/templates"
+      "username": "GNX.com",
+      "url": "https://my-gnx.com/"
     }
   ],
   "featured": [
     {
       "network": "GitHub",
-      "url": "https://github.com/MarcosKlender/AstroLinkHub",
-      "title": "Use this template and star it (:",
+      "url": "https://my-gnx.com/",
+      "title": "Go to the Official website",
       "textColor": "#FFF",
-      "backgroundImage": "https://githubuniverse.com/og-image-24.jpg",
+      "backgroundImage": "cover.png",
       "backgroundColor": null,
       "borderRadius": ".75rem"
     }

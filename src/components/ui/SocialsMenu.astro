@@ -1,0 +1,89 @@
+---
+// Component imports
+import SocialLink from "./SocialLink.astro";
+
+import { socials } from "index.json";
+---
+
+<div id="social-menu" class="socials_menu" aria-hidden="true">
+  <div>
+    <p>Kendrick Socials</p>
+    <p>Follow</p>
+  </div>
+  <ul>
+    {
+      socials.map(({ username, network, url }) => (
+        <li>
+          <SocialLink name={username} icon={network} link={url} />
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .socials_menu {
+    --_width: 32px;
+    --_height: 32px;
+    --_pos: 4.25rem;
+    --_transY: -4.25rem;
+    overflow: hidden;
+    z-index: 99;
+
+    position: absolute;
+    top: var(--_pos);
+    left: 0;
+    background-color: hsl(0, 0%, 5%);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    
+    width: var(--_width);
+    height: var(--_height);
+    display: none;
+    opacity: 0;
+    transform: translateY(var(--_transY));
+
+    transition-property: display opacity transform; 
+    transition-duration: 300ms;
+    transition-delay: 100ms;
+
+    /* transition: height 250ms ease-in, 
+    transform 300ms linear, 
+    opacity 350ms ease-in-out 100ms, 
+    width 250ms ease-in; */
+
+    transition-behavior: allow-discrete;
+
+    &[aria-hidden="false"]{
+      --_width: 300px;
+      --_height: 234px;
+      --_transY: 0;
+      display: block;
+      opacity: 1;
+
+      @starting-style {
+        --_width: 32px;
+        --_height: 32px;
+        --_transY: -4.25rem;
+        opacity: 0;
+      }
+
+      ul {
+        opacity: 1;
+      }
+    }
+
+    & > div {
+      display: flex;
+      margin-bottom: 0.3rem;
+      gap: 0.5rem;
+      justify-content: space-between;
+      padding: 0.5rem;
+    }
+
+    ul {
+      opacity: 0;
+      transition: all 800ms;
+    }
+  }
+</style>

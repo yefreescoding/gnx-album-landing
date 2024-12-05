@@ -1,0 +1,31 @@
+<script>
+  console.log("testing 🚀");
+
+  const headerToggle = document.getElementById("artist-toggle");
+  const socialsMenu = document.getElementById("social-menu");
+  const body = document.querySelector("body");
+
+  headerToggle?.addEventListener("click", () => {
+    const controlsValue = headerToggle.getAttribute("aria-controls");
+
+    headerToggle?.setAttribute(
+      "aria-controls",
+      `${controlsValue === "closed" ? "opened" : "closed"}`,
+    );
+    socialsMenu?.setAttribute(
+      "aria-hidden",
+      `${controlsValue === "closed" ? "false" : "true"}`,
+    );
+    body?.classList.toggle("overflow");
+  });
+
+  const featuredLink = document.getElementById("featured-link");
+
+  featuredLink?.addEventListener("mouseenter", () => {
+    body?.classList.add("overflow");
+  });
+
+  featuredLink?.addEventListener("mouseleave", () => {
+    body?.classList.remove("overflow");
+  });
+</script>

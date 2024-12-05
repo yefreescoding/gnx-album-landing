@@ -1,42 +1,129 @@
 ---
+// Data import
 import { header } from "index.json";
 import Section from "@/components/Section.astro";
+import HeaderMenuToggle from "../scripts/HeaderMenuToggle.astro";
+import SocialsMenu from "../ui/SocialsMenu.astro";
 
 const { title, description, image, alt, textColor } = header;
 ---
 
 <Section>
-  <div class="container" style={`color: ${textColor};`}>
-    <img src=`${image}` alt=`${alt}` />
-    <h1>{title}</h1>
-    <h2>{description}</h2>
-  </div>
+  <header>
+    <div class="header_img">
+      <button id="artist-toggle" aria-controls="closed">
+        <img src=`${image}` alt=`${alt}` />
+      </button>
+    </div>
+    <div class="header_title">
+      <h1>{title}</h1>
+      <h2>{description}</h2>
+    </div>
+    <a
+      class="header_store_link"
+      href="https://shop.my-gnx.com/"
+      target="_blank"
+    >
+      Next Shows
+      <svg
+        width="14px"
+        height="14px"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        color="currentColor"
+        ><path
+          d="M6.00005 19L19 5.99996M19 5.99996V18.48M19 5.99996H6.52005"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path></svg
+      >
+    </a>
+    <SocialsMenu />
+  </header>
+  <HeaderMenuToggle />
 </Section>
 
 <style>
-  h1 {
-    padding-top: 1rem;
-    font-size: 2rem;
-  }
-
-  h2 {
-    padding-top: 0.5rem;
-    font-size: 1.1rem;
-    font-weight: normal;
-    text-wrap: pretty;
-  }
-
-  img {
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    width: 128px;
-    border-radius: 16px;
-  }
-
-  .container {
+  header {
+    position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 20vh;
+  }
+
+  .header_img {
+    --_img-size: 38px;
+    margin-right: calc(var(--_img-size) + 20px);
+    transition: transform 300ms linear;
+
+    button {
+      --_bgk-color: hsl(0, 0%, 95%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 5px;
+      border-radius: 100vw;
+      background-color: var(--_bgk-color);
+
+      transition: background 300ms linear;
+
+
+      &:hover {
+        --_bgk-color: hsl(0, 0%, 75%);
+      }
+
+      &[aria-controls="opened"]{
+        --_bgk-color: hsl(0, 0%, 5%);
+      }
+    }
+
+    img {
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      width: var(--_img-size);
+      border-radius: 100vw;
+    }
+
+    &:has(button[aria-controls="opened"]) {
+      z-index: 9999;
+      transform: scale(1.05);
+    }
+  }
+
+  .header_title {
+    text-align: center;
+    color: hsl(0, 0%, 70%);
+
+    h1 {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
+
+    h2 {
+      font-size: clamp(0.9rem, 1vw, 1.3rem);
+      text-wrap: pretty;
+    }
+  }
+
+  .header_store_link {
+    color: hsl(0, 0%, 70%);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    padding: 3px 8px;
+    border-radius: 16px;
+    border: 1px solid transparent;
+
+    transition: all 120ms linear;
+
+    &:hover {
+      background-color: hsl(0, 0%, 89%);
+      border-color: hsl(0, 0%, 80%);
+      color: hsl(0, 0%, 30%);
+    }
   }
 </style>
