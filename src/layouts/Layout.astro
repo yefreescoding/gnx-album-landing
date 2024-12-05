@@ -32,13 +32,12 @@ const { firstColor, secondColor } = background;
   body.overflow {
     overflow: hidden;
 
-    &::after {
+    & .page_wrap::after {
       z-index: 9;
       content: "";
       position: absolute;
       inset: 0;
-      /* background-color: red; */
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px) brightness(95%);
     }
   }
 

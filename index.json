@@ -42,46 +42,34 @@
     {
       "network": "GitHub",
       "url": "https://my-gnx.com/",
-      "title": "Go to the Official website",
+      "title": "Grand National Tour",
       "textColor": "#FFF",
-      "backgroundImage": "cover.png",
+      "backgroundImage": "cover-featured.png",
       "backgroundColor": null,
       "borderRadius": ".75rem"
     }
   ],
   "buttons": [
+    { "id": 1, "title": "Wacced Out Murals", "artist": "Kendrick Lamar" },
+    { "id": 2, "title": "Squabble Up", "artist": "Kendrick Lamar" },
+    { "id": 3, "title": "Luther", "artist": "Kendrick Lamar & SZA" },
+    { "id": 4, "title": "Man At The Garden", "artist": "Kendrick Lamar" },
+    { "id": 5, "title": "Hey Now", "artist": "Kendrick Lamar & Dody6" },
+    { "id": 6, "title": "Reincarnated", "artist": "Kendrick Lamar" },
+    { "id": 7, "title": "TV Off", "artist": "Kendrick Lamar & Ledty Gunplay" },
     {
-      "network": "LinkedIn",
-      "url": "https://www.linkedin.com/in/marcosklender/?locale=en_US",
-      "title": "Let's connect on LinkedIn",
-      "textColor": "#FFF",
-      "backgroundColor": "#000",
-      "borderRadius": ".75rem"
+      "id": 8,
+      "title": "Dodger Blue",
+      "artist": "Kendrick Lamar (ft. Roddy Ricch, Siete7x & Wallie the Sensei)"
     },
+    { "id": 9, "title": "Peekaboo", "artist": "Kendrick Lamar & AzChike" },
+    { "id": 10, "title": "Heart Pt. 6", "artist": "Kendrick Lamar" },
     {
-      "network": "Instagram",
-      "url": "https://www.instagram.com/marcosklender",
-      "title": "Follow me on Instagram",
-      "textColor": "#FFF",
-      "backgroundColor": "#000",
-      "borderRadius": ".75rem"
+      "id": 11,
+      "title": "GNX",
+      "artist": "Kendrick Lamar (ft. Hitta J3, Peysoh & YoungThreat)"
     },
-    {
-      "network": "Mail",
-      "url": "mailto:marcosklender@gmail.com",
-      "title": "Contact me anytime",
-      "textColor": "#FFF",
-      "backgroundColor": "#000",
-      "borderRadius": ".75rem"
-    },
-    {
-      "network": "Link",
-      "url": "https://jsonlinks.netlify.app/templates",
-      "title": "See more templates",
-      "textColor": "#FFF",
-      "backgroundColor": "#000",
-      "borderRadius": ".75rem"
-    }
+    { "id": 12, "title": "Gloria", "artist": "Kendrick Lamar & SZA" }
   ],
   "footer": {
     "copyright": "Made with 🍺 by MarcosKlender 🇪🇨",
