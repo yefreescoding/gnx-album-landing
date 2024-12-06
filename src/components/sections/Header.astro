@@ -8,7 +8,7 @@ import SocialsMenu from "../ui/SocialsMenu.astro";
 const { title, description, image, alt, textColor } = header;
 ---
 
-<Section>
+
   <header>
     <div class="header_img">
       <button id="artist-toggle" aria-controls="closed">
@@ -21,10 +21,9 @@ const { title, description, image, alt, textColor } = header;
     </div>
     <a
       class="header_store_link"
-      href="https://shop.my-gnx.com/"
-      target="_blank"
+      href="#sign-form"
     >
-      Official Store
+      Sign Up
       <svg
         width="14px"
         height="14px"
@@ -44,7 +43,7 @@ const { title, description, image, alt, textColor } = header;
     <SocialsMenu />
   </header>
   <HeaderMenuToggle />
-</Section>
+
 
 <style>
   header {
@@ -53,7 +52,8 @@ const { title, description, image, alt, textColor } = header;
     /* flex-wrap: wrap; */
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20vh;
+    margin: 0 auto 20vh;
+    width: min(calc(100% - 1rem), 80em);
   }
 
   .header_img {
@@ -126,4 +126,13 @@ const { title, description, image, alt, textColor } = header;
       color: hsl(0, 0%, 30%);
     }
   }
+
+  @media (width < 54em){
+    .header_store_link {
+      display: none;
+    }
+
+    .header_title {
+      text-align: right;
+    }
 </style>
