@@ -33,7 +33,7 @@ const { firstColor, secondColor } = background;
     overflow: hidden;
 
     & .page_wrap::after {
-      z-index: 9;
+      z-index: 999;
       content: "";
       position: absolute;
       inset: 0;
@@ -42,6 +42,7 @@ const { firstColor, secondColor } = background;
   }
 
   .page_wrap {
+    position: relative;
     background: linear-gradient(var(--firstColor), var(--secondColor));
     min-height: 100vh;
     padding: 2rem 0;

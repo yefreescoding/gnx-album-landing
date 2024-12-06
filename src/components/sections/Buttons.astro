@@ -1,61 +1,31 @@
 ---
 import { buttons } from "index.json";
-import Section from "@/components/Section.astro";
-
-import Discord from "@/icons/Discord.astro";
-import Facebook from "@/icons/Facebook.astro";
-import GitHub from "@/icons/GitHub.astro";
-import Instagram from "@/icons/Instagram.astro";
-import Link from "@/icons/Link.astro";
-import LinkedIn from "@/icons/LinkedIn.astro";
-import Mail from "@/icons/Mail.astro";
-import Map from "@/icons/Map.astro";
-import Medium from "@/icons/Medium.astro";
-import Spotify from "@/icons/Spotify.astro";
-import TikTok from "@/icons/TikTok.astro";
-import Twitch from "@/icons/Twitch.astro";
-import WhatsApp from "@/icons/WhatsApp.astro";
-import X from "@/icons/X.astro";
-import YouTube from "@/icons/YouTube.astro";
 import AlbumCovers from "../ui/AlbumCovers.astro";
-
-const SOCIAL_ICONS: Record<string, any> = {
-  Discord,
-  Facebook,
-  GitHub,
-  Instagram,
-  Link,
-  LinkedIn,
-  Mail,
-  Map,
-  Medium,
-  Spotify,
-  TikTok,
-  Twitch,
-  WhatsApp,
-  X,
-  YouTube,
-};
 ---
 
 <div class="container">
   <ul class="album_covers">
     {
-      buttons.map(({id, title, artist}) => {
-          return <AlbumCovers songId={id} title={title} artist={artist} />;
-        },
-      )
+      buttons.map(({ id, title, artist }) => {
+        return <AlbumCovers songId={id} title={title} artist={artist} />;
+      })
     }
   </ul>
 </div>
 
 <style>
   .container {
-    overflow: scroll;
+    overflow-x: scroll;
     padding-block: 1rem;
-    padding-inline-start: 15vw;
     scroll-behavior: smooth;
-    scroll-snap-type: mandatory;
+    scroll-snap-type: proximity;
+    padding-inline-start: 10vw;
+  }
+
+  @media (width > 27em) {
+    .container {
+      padding-inline-start: 15vw;
+    }
   }
 
   .album_covers {

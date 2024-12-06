@@ -1,0 +1,17 @@
+<script>
+  console.log("testing 🚀");
+
+  const albumCovers = document.querySelectorAll(".card");
+
+  albumCovers.forEach((item) => {
+    item.addEventListener("click", () => {
+      const isExpanded = item.getAttribute("aria-expanded") === "true";
+
+      // Set all `aria-expanded` to false
+      albumCovers.forEach((el) => el.setAttribute("aria-expanded", "false"));
+
+      // Toggle the clicked element only if it wasn't already expanded
+      item.setAttribute("aria-expanded", isExpanded ? "false" : "true");
+    });
+  });
+</script>
